@@ -1,5 +1,6 @@
 import Nav from './components/Nav'
 import Hero from './components/Hero'
+import TechMarquee from './components/TechMarquee'
 import CaseStudy from './components/CaseStudy'
 import Features from './components/Features'
 import CodeSample from './components/CodeSample'
@@ -11,6 +12,7 @@ function App() {
     <>
       <Nav />
       <Hero />
+      <TechMarquee />
       <CaseStudy />
       <Features />
       <CodeSample />

@@ -85,6 +85,7 @@ export default function Hero() {
 
         <Reveal delayMs={180}>
           <div style={{ position: 'relative' }}>
+            <div className="hero-glow" aria-hidden />
             <ViewportFrame>
               <Suspense fallback={<SceneFallback />}>
                 <MascotScene />
