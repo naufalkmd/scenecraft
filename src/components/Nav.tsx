@@ -40,12 +40,15 @@ export default function Nav() {
           </span>
         </span>
         <div style={{ display: 'flex', gap: 28, fontFamily: 'var(--mono)', fontSize: 13, color: 'var(--dim)' }}>
-          <a href="#patterns">rules</a>
+          {/* padding brings the tap target to WCAG 2.2's 24x24px minimum (2.5.8) without changing the visible text size */}
+          <a href="#patterns" style={{ display: 'inline-flex', alignItems: 'center', padding: '10px 0' }}>
+            rules
+          </a>
           <a
             href="https://github.com/naufalkmd/scenecraft"
             target="_blank"
             rel="noreferrer"
-            style={{ display: 'inline-flex', alignItems: 'center', gap: 5 }}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: 5, padding: '10px 0' }}
           >
             source
             <ExternalLinkIcon />
