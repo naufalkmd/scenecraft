@@ -7,15 +7,6 @@ import type { Group } from 'three'
 const MASCOT_URL = '/models/mascot-idle.glb'
 const TARGET_HEIGHT = 2.4
 
-export const MASCOT_STATS = {
-  tris: 30_159,
-  verts: 21_614,
-  clip: 'Idle',
-  duration: 4,
-  channels: 72,
-  keyframes: 2_713,
-}
-
 useGLTF.preload(MASCOT_URL)
 
 function Mascot() {

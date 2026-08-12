@@ -1,6 +1,10 @@
-import MascotScene, { MASCOT_STATS } from '../scenes/MascotScene'
+import { lazy, Suspense } from 'react'
+import { MASCOT_STATS } from '../scenes/mascotStats'
 import Reveal from './Reveal'
+import SceneFallback from './SceneFallback'
 import ViewportFrame from './ViewportFrame'
+
+const MascotScene = lazy(() => import('../scenes/MascotScene'))
 
 export default function Hero() {
   return (
@@ -82,7 +86,9 @@ export default function Hero() {
         <Reveal delayMs={180}>
           <div style={{ position: 'relative' }}>
             <ViewportFrame>
-              <MascotScene />
+              <Suspense fallback={<SceneFallback />}>
+                <MascotScene />
+              </Suspense>
             </ViewportFrame>
             <div
               className="hero-stats"

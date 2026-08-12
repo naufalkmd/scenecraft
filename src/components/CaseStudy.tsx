@@ -1,7 +1,10 @@
-import { useState } from 'react'
-import GargoyleScene, { type LodTierStat, LOD_STATS } from '../scenes/GargoyleScene'
+import { lazy, Suspense, useState } from 'react'
+import { LOD_STATS, type LodTierStat } from '../scenes/gargoyleStats'
 import Reveal from './Reveal'
+import SceneFallback from './SceneFallback'
 import ViewportFrame from './ViewportFrame'
+
+const GargoyleScene = lazy(() => import('../scenes/GargoyleScene'))
 
 function formatBytes(bytes: number) {
   if (bytes >= 1_000_000) return `${(bytes / 1_000_000).toFixed(1)}MB`
@@ -63,7 +66,9 @@ export default function CaseStudy() {
         <Reveal delayMs={150}>
           <div style={{ maxWidth: 360 }}>
             <ViewportFrame>
-              <GargoyleScene onTierChange={setStat} />
+              <Suspense fallback={<SceneFallback />}>
+                <GargoyleScene onTierChange={setStat} />
+              </Suspense>
             </ViewportFrame>
             <div
               className="hero-stats"
