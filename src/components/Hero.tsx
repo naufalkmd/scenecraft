@@ -1,5 +1,4 @@
 import MascotScene, { MASCOT_STATS } from '../scenes/MascotScene'
-import { ExternalLinkIcon } from './icons'
 import Reveal from './Reveal'
 import ViewportFrame from './ViewportFrame'
 
@@ -52,13 +51,8 @@ export default function Hero() {
           </p>
           <div style={{ display: 'flex', gap: 12, marginTop: 34 }}>
             <a
-              href="https://github.com/fal-ai-community/skills"
-              target="_blank"
-              rel="noreferrer"
+              href="#get-started"
               style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 8,
                 fontFamily: 'var(--mono)',
                 fontSize: 14,
                 fontWeight: 600,
@@ -68,7 +62,6 @@ export default function Hero() {
               }}
             >
               Install the skill
-              <ExternalLinkIcon />
             </a>
             <a
               href="#patterns"

@@ -2,6 +2,7 @@ import Nav from './components/Nav'
 import Hero from './components/Hero'
 import Features from './components/Features'
 import CodeSample from './components/CodeSample'
+import Quickstart from './components/Quickstart'
 import Footer from './components/Footer'
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Hero />
       <Features />
       <CodeSample />
+      <Quickstart />
       <Footer />
     </>
   )

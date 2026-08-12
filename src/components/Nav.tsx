@@ -42,7 +42,7 @@ export default function Nav() {
         <div style={{ display: 'flex', gap: 28, fontFamily: 'var(--mono)', fontSize: 13, color: 'var(--dim)' }}>
           <a href="#patterns">rules</a>
           <a
-            href="https://github.com/fal-ai-community/skills"
+            href="https://github.com/naufalkmd/scenecraft"
             target="_blank"
             rel="noreferrer"
             style={{ display: 'inline-flex', alignItems: 'center', gap: 5 }}
