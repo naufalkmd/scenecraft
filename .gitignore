@@ -12,9 +12,6 @@ dist
 dist-ssr
 *.local
 
-# Local skill symlinks (point outside this repo, not portable)
-.claude/skills/
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

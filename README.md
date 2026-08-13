@@ -36,10 +36,11 @@ npm run dev
 
 ## Project structure
 
-See [SKILLS.md](SKILLS.md) for the full collection of Claude Code skills wired into this project (local dev only — symlinked in `.claude/skills/`, not part of the repo's own git history) and where each one actually comes from.
+See [SKILLS.md](SKILLS.md) for the full skill collection — 61 skills vendored from 4 forked repos, 13 actively wired into `.claude/skills/` (symlinked to the vendored copies, not duplicated) and used by Claude Code in this project.
 
 ```
-skill/                the portable Claude Code skill — SKILL.md + references/
+skill/                the portable Claude Code skill — SKILL.md + references/ (this project's own)
+forked-skills/         full vendored copies of everything forked from — see SKILLS.md
 src/scenes/            the R3F/Three.js scenes shown on the page
 src/components/        page sections (Hero, CaseStudy, Features, CodeSample, Quickstart)
 src/components/ui/     shadcn/ui components (Dialog, Button), themed to this site's
