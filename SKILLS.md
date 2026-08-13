@@ -1,6 +1,6 @@
 # Skill collection
 
-Every skill from every repo this project forked from, vendored directly into `forked-skills/` — not external sibling clones anymore, so this repo is self-contained. 62 skills total across 4 forks; 59 are actively wired into `.claude/skills/` (symlinked to the vendored copies below, not duplicated — see the note on `ux-ui-agent-skills` in the legend) and get used by Claude Code in this project. The remaining 5 are vendored for completeness but deliberately not wired, one per row below.
+Every skill from every repo this project forked from, vendored directly into `forked-skills/` — not external sibling clones anymore, so this repo is self-contained. Scoped deliberately to frontend work: general-purpose Anthropic office/dev skills with no frontend angle (`docx`, `pdf`, `pptx`, `xlsx`, `claude-api`, `mcp-builder`, `internal-comms`, `slack-gif-creator`, `doc-coauthoring`, `skill-creator`, `algorithmic-art`, `canvas-design`, `brand-guidelines`) were removed entirely rather than left unwired, so this stays a niche frontend collection instead of a general skill dump. 49 skills total across 4 forks; 47 are actively wired into `.claude/skills/` (symlinked to the vendored copies below, not duplicated — see the note on `ux-ui-agent-skills` in the legend) and get used by Claude Code in this project. The remaining 4 are vendored for completeness but deliberately not wired, one per row below.
 
 Grouped below by what each skill actually does, not by which repo it came from — the **Source** column carries the provenance instead.
 
@@ -74,34 +74,16 @@ Each fork is vendored down to what's actually load-bearing: skill folders plus w
 | **prototype** | ✅ | ux-ui | Nested symlinks (`workflows/`). |
 | **redesign** | ✅ | ux-ui | Nested symlinks (`scripts/`, `taste/`, `workflows/`). |
 | **ux-writing** | ✅ | ux-ui | Nested symlinks (`accessibility/`, `content/`). |
+| **theme-factory** | ✅ | anthropic | Styles artifacts (slides, docs, HTML landing pages) with a theme. |
+| **web-artifacts-builder** | ✅ | anthropic | Multi-component React/Tailwind/shadcn claude.ai artifacts. |
+| **webapp-testing** | ✅ | anthropic | Playwright toolkit for testing local web apps. |
 | **shadcn** | ✅ | installer | Lives in `.agents/skills/`. |
 | **migrate-radix-to-base** | ✅ | installer | Bundled with the shadcn install; unused so far. |
 | **brandkit** | | ux-ui | Would compete with this site's own hand-built `--ink`/`--paper`/`--wire` token system. |
 | **design-tokens** | | ux-ui | Would compete with this site's own token system, same as `brandkit`. |
 | **token-build** | | ux-ui | Would compete with this site's own token system, same as `brandkit`. |
 
-Left unwired deliberately: `design-tokens`/`token-build`/`brandkit` would compete with this site's own token system rather than complement it. Everything else in the `ux-ui` fork is wired.
-
-## Document & content authoring (Anthropic office skills)
-
-| Skill | Wired | Source | Notes |
-|---|---|---|---|
-| **algorithmic-art** | ✅ | anthropic | |
-| **canvas-design** | ✅ | anthropic | |
-| **claude-api** | ✅ | anthropic | |
-| **doc-coauthoring** | ✅ | anthropic | |
-| **docx** | ✅ | anthropic | |
-| **internal-comms** | ✅ | anthropic | |
-| **mcp-builder** | ✅ | anthropic | |
-| **pdf** | ✅ | anthropic | |
-| **pptx** | ✅ | anthropic | |
-| **skill-creator** | ✅ | anthropic | |
-| **slack-gif-creator** | ✅ | anthropic | |
-| **theme-factory** | ✅ | anthropic | |
-| **web-artifacts-builder** | ✅ | anthropic | |
-| **webapp-testing** | ✅ | anthropic | |
-| **xlsx** | ✅ | anthropic | |
-| **brand-guidelines** | | anthropic | The one skill left unwired in this fork — Anthropic's own brand identity, not applicable to this project. |
+Left unwired deliberately: `design-tokens`/`token-build`/`brandkit` would compete with this site's own token system rather than complement it. Everything else in the `ux-ui` fork is wired. The `anthropic` fork is pared down to just these 4 frontend-relevant skills — the rest of that fork (general office/dev skills, `brand-guidelines`) was removed entirely, see the intro note above.
 
 ## Retired
 
