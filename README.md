@@ -36,6 +36,8 @@ npm run dev
 
 ## Project structure
 
+See [SKILLS.md](SKILLS.md) for the full collection of Claude Code skills wired into this project (local dev only — symlinked in `.claude/skills/`, not part of the repo's own git history) and where each one actually comes from.
+
 ```
 skill/                the portable Claude Code skill — SKILL.md + references/
 src/scenes/            the R3F/Three.js scenes shown on the page
