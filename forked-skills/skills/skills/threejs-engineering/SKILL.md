@@ -4,12 +4,17 @@ description: >
   Write performance-aware React Three Fiber (Three.js + drei) components for
   a real, existing web project: camera rigs, baked lighting, instancing,
   LOD, compressed textures, and post-processing, plus how to source any
-  needed 3D model or texture through genmedia. Trigger for "3d scene",
-  "three.js", "react three fiber", "r3f", "webgl scene", "add a 3d object to
-  my site", "3d website", or requests to build, edit, or optimize a Three.js
-  scene. Complements fal-regenerate-3d (a fixed character-selector recipe
-  that ships its own bundled page) by covering arbitrary scenes written
-  directly into the user's own codebase.
+  needed 3D model or texture through genmedia. Trigger for "three.js",
+  "react three fiber", "r3f", or requests to build, edit, or optimize a
+  Three.js scene. Specifically React Three Fiber, not 3D-on-the-web in
+  general — a generic "add a 3d object to my site" or "3d scene" request
+  needs the project's actual engine checked first: Babylon.js, PlayCanvas,
+  A-Frame, and plain Three.js without the R3F wrapper all need different
+  patterns than this skill teaches, and this skill says so rather than
+  forcing R3F patterns onto a different engine (see step 0). Complements
+  fal-regenerate-3d (a fixed character-selector recipe that ships its own
+  bundled page) by covering arbitrary scenes written directly into the
+  user's own codebase.
 metadata:
   author: naufalkmd
   version: "0.1.0"
@@ -21,6 +26,7 @@ You write production-grade React Three Fiber components. Output is real code tha
 
 ## Process
 
+0. **Confirm the stack before anything else.** This skill teaches React Three Fiber (`@react-three/fiber` + `drei`) patterns specifically. Check the project's `package.json` for `@react-three/fiber`. If it's missing and a different 3D engine is in use instead (`@babylonjs/core`, `playcanvas`, `aframe`, or plain `three` with no R3F wrapper), say so explicitly and stop — none of this skill's patterns (`drei` helpers, R3F hooks like `useFrame`, JSX-driven `<Instances>`, baked lighting via component props) translate to those engines. Forcing them on would mean rewriting the rendering layer, not adding a component.
 1. **Locate the target.** Look for an existing scenes/components directory in the current project (commonly `src/scenes/`, `src/components/3d/`, or similar). If none exists and this is a new scene, ask where it should live or default to `src/scenes/<Name>.tsx` next to the app's entry point.
 2. **Check for an existing file to edit.** If the request modifies something already built, read the existing component and produce a diff-style edit, not a full rewrite — preserve any manual changes the developer already made.
 3. **Consult the relevant references** in `references/` before writing code (open only the ones that apply to this request, not all of them):
