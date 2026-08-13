@@ -36,7 +36,7 @@ npm run dev
 
 ## Project structure
 
-See [SKILLS.md](SKILLS.md) for the full skill collection — 61 skills vendored from 4 forked repos, 13 actively wired into `.claude/skills/` (symlinked to the vendored copies, not duplicated) and used by Claude Code in this project.
+See [SKILLS.md](SKILLS.md) for the full skill collection — 62 skills vendored from 4 forked repos, grouped by what they do rather than which fork they came from. 13 are actively wired into `.claude/skills/` (symlinked to the vendored copies, not duplicated) and used by Claude Code in this project.
 
 ```
 skill/                the portable Claude Code skill — SKILL.md + references/ (this project's own)
