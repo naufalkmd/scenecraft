@@ -1,20 +1,23 @@
 # Skill collection
 
-Every skill from every repo this project forked from, vendored directly into `forked-skills/` — not external sibling clones anymore, so this repo is self-contained. 62 skills total across 4 forks; 13 are actively wired into `.claude/skills/` (symlinked to the vendored copies below, not duplicated) and get used by Claude Code in this project. The rest are vendored for completeness and future reuse, not currently active here.
+Every skill from every repo this project forked from, vendored directly into `forked-skills/` — not external sibling clones anymore, so this repo is self-contained. 62 skills total across 4 forks; 59 are actively wired into `.claude/skills/` (symlinked to the vendored copies below, not duplicated — see the note on `ux-ui-agent-skills` in the legend) and get used by Claude Code in this project. The remaining 5 are vendored for completeness but deliberately not wired, one per row below.
 
 Grouped below by what each skill actually does, not by which repo it came from — the **Source** column carries the provenance instead.
 
+Each fork is vendored down to what's actually load-bearing: skill folders plus whatever shared files those skills genuinely read (see **Wired** below). Each fork's own project scaffolding — its README, CI config, `package.json`/lockfile, `.mcp.json`, dev docs, install-CLI entrypoint, marketing assets (`showcase.gif`, `cover.html`) — isn't kept, since nothing in it is read by any skill.
+
 ## Legend
 
-- **Wired** — symlinked into `.claude/skills/` (or `.agents/skills/`) and used by Claude Code in this project today.
+- **Wired** — reachable under `.claude/skills/` and used by Claude Code in this project today. Most skills here are a single flat symlink to their vendored copy in `forked-skills/`. Two forks are exceptions, because their skills reach into a shared folder at the fork's own repo root instead of keeping everything inside their own skill folder — each of those skills is wired as a small local directory of nested symlinks (one per file it actually needs, sometimes a whole shared subfolder when the skill draws on it as a library rather than a fixed file list — e.g. `apply-aesthetic`'s 138-system `design-systems/library/`) rather than one flat symlink: all 14 skills from `ux-ui-agent-skills` (shared `accessibility/`, `scripts/`, `taste/`, `tokens/`, `workflows/`, `examples/`, `frameworks/`, `design-systems/`, `content/`, `components/`), and all 9 skills from `web-animation-skills` (a shared `scripts/` verify-loop toolkit — `seek-shot.sh` + `contact-sheet.sh` — that every skill in that fork calls).
 - **Source** — `skills` = [fal-ai-community/skills](https://github.com/fal-ai-community/skills), `anthropic` = [anthropics/skills](https://github.com/anthropics/skills), `web-animation` = [iart-ai/web-animation-skills](https://github.com/iart-ai/web-animation-skills), `ux-ui` = [plugin87/ux-ui-agent-skills](https://github.com/plugin87/ux-ui-agent-skills), `ours` = authored by this project, `installer` = official shadcn CLI output, not one of the 4 forks.
+- **License** — only `web-animation-skills` ships a real `LICENSE` file in this vendor tree. `ux-ui-agent-skills` declares `"license": "MIT"` in its (now-removed) `package.json` but never shipped `LICENSE` text; `anthropic-skills` and `skills` (fal-ai-community) don't state one at all beyond a one-line README mention. Not fixed here — fetch the real upstream `LICENSE` from each GitHub repo directly if this needs to be resolved.
 
 ## 3D & scene generation
 
 | Skill | Wired | Source | Notes |
 |---|---|---|---|
 | **threejs-engineering** | ✅ | ours (housed in `forked-skills/skills`) | This project's own skill; not actually forked despite living in the fal-ai-community fork's directory. |
-| **fal-regenerate-3d** | | skills | Fixed rigged-character-selector recipe — closest thing to a competitor to `threejs-engineering`. See its `SKILL.md` for when it's the better fit. |
+| **fal-regenerate-3d** | ✅ | skills | Fixed rigged-character-selector recipe — closest thing to a competitor to `threejs-engineering`. See its `SKILL.md` for when it's the better fit. |
 
 ## Media generation (fal / genmedia pipeline)
 
@@ -24,18 +27,18 @@ Grouped below by what each skill actually does, not by which repo it came from �
 | **fal-models-catalog** | ✅ | skills | Curated endpoint picks. |
 | **fal-recipes** | ✅ | skills | |
 | **fal-workflow** | ✅ | skills | |
-| **genmedia-workflow** | | skills | Left out of the active set deliberately — near-duplicate of `fal-workflow`'s Mode B, same reference filenames. |
-| **fal-prompting** | | skills | |
-| **fal-gamedev** | | skills | |
-| **fal-redesign** | | skills | |
-| **character-design** | | skills | |
-| **cinematography** | | skills | |
-| **commercial** | | skills | |
-| **fan-cam** | | skills | |
-| **marketing** | | skills | |
-| **model-routing** | | skills | |
-| **storytelling** | | skills | |
-| **ugc** | | skills | |
+| **fal-prompting** | ✅ | skills | |
+| **fal-gamedev** | ✅ | skills | |
+| **fal-redesign** | ✅ | skills | |
+| **character-design** | ✅ | skills | |
+| **cinematography** | ✅ | skills | |
+| **commercial** | ✅ | skills | |
+| **fan-cam** | ✅ | skills | |
+| **marketing** | ✅ | skills | |
+| **model-routing** | ✅ | skills | |
+| **storytelling** | ✅ | skills | |
+| **ugc** | ✅ | skills | |
+| **genmedia-workflow** | | skills | The one skill left unwired in this fork — near-duplicate of `fal-workflow`'s Mode B, same reference filenames. |
 
 ## Web animation & motion
 
@@ -45,60 +48,60 @@ Grouped below by what each skill actually does, not by which repo it came from �
 | **gsap-web** | ✅ | web-animation | |
 | **accessible-animation** | ✅ | web-animation | |
 | **micro-interaction** | ✅ | web-animation | |
-| **60fps-animation** | | web-animation | |
-| **ascii-animation** | | web-animation | |
-| **glassmorphism** | | web-animation | |
-| **lottie-animation** | | web-animation | |
-| **page-transition-animation** | | web-animation | |
-| **svg-animation** | | web-animation | |
+| **60fps-animation** | ✅ | web-animation | |
+| **ascii-animation** | ✅ | web-animation | |
+| **glassmorphism** | ✅ | web-animation | |
+| **lottie-animation** | ✅ | web-animation | |
+| **page-transition-animation** | ✅ | web-animation | |
+| **svg-animation** | ✅ | web-animation | Every skill in this fork is wired — none of them compete or overlap. |
 
 ## UI, design systems & review
 
 | Skill | Wired | Source | Notes |
 |---|---|---|---|
 | **frontend-design** | ✅ | anthropic | |
-| **a11y-audit** | ✅ | ux-ui | Not self-contained — its `SKILL.md` reaches into sibling `accessibility/`, `scripts/`, `taste/` folders at the `ux-ui-agent-skills` repo root, unlike every other skill here. |
+| **a11y-audit** | ✅ | ux-ui | Wired via nested symlinks (see legend) — its `SKILL.md` reaches into sibling `accessibility/`, `scripts/`, `taste/` folders at the `ux-ui-agent-skills` repo root. |
+| **apply-aesthetic** | ✅ | ux-ui | Nested symlinks (`scripts/`, `taste/`, and the full `design-systems/library/` — all 138 systems, 1.6MB — since the skill resolves any one of them by name at runtime). |
+| **design-code** | ✅ | ux-ui | Nested symlinks (`accessibility/`, `content/`, `examples/` incl. `golden/theme.css`, `frameworks/` incl. the full `adapters/` subfolder, `scripts/`, `taste/`, `workflows/`). |
+| **design-component** | ✅ | ux-ui | Nested symlinks (`accessibility/`, the full `components/` folder, `examples/` incl. `data-table.html`, `frameworks/`, `scripts/`, `taste/`). |
+| **design-qa** | ✅ | ux-ui | Nested symlinks (`scripts/`, `workflows/`). |
+| **design-review** | ✅ | ux-ui | Nested symlinks (`accessibility/`, `scripts/`, `taste/`, `workflows/`). |
+| **figma-integration** | ✅ | ux-ui | Nested symlinks (`scripts/`, `tokens/`, `workflows/`). |
+| **governance** | ✅ | ux-ui | Nested symlinks (`design-systems/`, `scripts/`, `workflows/`). |
+| **image-to-code** | ✅ | ux-ui | Nested symlinks (the full `components/` folder, `frameworks/`, `scripts/`, `taste/`). |
+| **migrate-design-system** | ✅ | ux-ui | Nested symlinks (`design-systems/`, `scripts/`). |
+| **performance** | ✅ | ux-ui | Nested symlinks (`tokens/`, `workflows/`). |
+| **prototype** | ✅ | ux-ui | Nested symlinks (`workflows/`). |
+| **redesign** | ✅ | ux-ui | Nested symlinks (`scripts/`, `taste/`, `workflows/`). |
+| **ux-writing** | ✅ | ux-ui | Nested symlinks (`accessibility/`, `content/`). |
 | **shadcn** | ✅ | installer | Lives in `.agents/skills/`. |
 | **migrate-radix-to-base** | ✅ | installer | Bundled with the shadcn install; unused so far. |
-| **apply-aesthetic** | | ux-ui | |
 | **brandkit** | | ux-ui | Would compete with this site's own hand-built `--ink`/`--paper`/`--wire` token system. |
-| **design-code** | | ux-ui | |
-| **design-component** | | ux-ui | |
-| **design-qa** | | ux-ui | |
-| **design-review** | | ux-ui | |
 | **design-tokens** | | ux-ui | Would compete with this site's own token system, same as `brandkit`. |
-| **figma-integration** | | ux-ui | |
-| **governance** | | ux-ui | |
-| **image-to-code** | | ux-ui | |
-| **migrate-design-system** | | ux-ui | |
-| **performance** | | ux-ui | |
-| **prototype** | | ux-ui | |
-| **redesign** | | ux-ui | |
 | **token-build** | | ux-ui | Would compete with this site's own token system, same as `brandkit`. |
-| **ux-writing** | | ux-ui | |
 
-Left inactive as a group deliberately, aside from `frontend-design`/`a11y-audit`/`shadcn`: `design-tokens`/`token-build`/`brandkit` would compete with this site's own token system rather than complement it. Only `a11y-audit` earned activation from the `ux-ui` fork, since it's the one thing genuinely missing elsewhere.
+Left unwired deliberately: `design-tokens`/`token-build`/`brandkit` would compete with this site's own token system rather than complement it. Everything else in the `ux-ui` fork is wired.
 
 ## Document & content authoring (Anthropic office skills)
 
 | Skill | Wired | Source | Notes |
 |---|---|---|---|
-| **algorithmic-art** | | anthropic | |
-| **brand-guidelines** | | anthropic | Anthropic's own brand identity — not applicable to this project regardless of activation. |
-| **canvas-design** | | anthropic | |
-| **claude-api** | | anthropic | |
-| **doc-coauthoring** | | anthropic | |
-| **docx** | | anthropic | |
-| **internal-comms** | | anthropic | |
-| **mcp-builder** | | anthropic | |
-| **pdf** | | anthropic | |
-| **pptx** | | anthropic | |
-| **skill-creator** | | anthropic | |
-| **slack-gif-creator** | | anthropic | |
-| **theme-factory** | | anthropic | |
-| **web-artifacts-builder** | | anthropic | |
-| **webapp-testing** | | anthropic | |
-| **xlsx** | | anthropic | |
+| **algorithmic-art** | ✅ | anthropic | |
+| **canvas-design** | ✅ | anthropic | |
+| **claude-api** | ✅ | anthropic | |
+| **doc-coauthoring** | ✅ | anthropic | |
+| **docx** | ✅ | anthropic | |
+| **internal-comms** | ✅ | anthropic | |
+| **mcp-builder** | ✅ | anthropic | |
+| **pdf** | ✅ | anthropic | |
+| **pptx** | ✅ | anthropic | |
+| **skill-creator** | ✅ | anthropic | |
+| **slack-gif-creator** | ✅ | anthropic | |
+| **theme-factory** | ✅ | anthropic | |
+| **web-artifacts-builder** | ✅ | anthropic | |
+| **webapp-testing** | ✅ | anthropic | |
+| **xlsx** | ✅ | anthropic | |
+| **brand-guidelines** | | anthropic | The one skill left unwired in this fork — Anthropic's own brand identity, not applicable to this project. |
 
 ## Retired
 

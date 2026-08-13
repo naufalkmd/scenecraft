@@ -1,0 +1,1 @@
+../../../../forked-skills/ux-ui-agent-skills/scripts/validate_theme_refs.py

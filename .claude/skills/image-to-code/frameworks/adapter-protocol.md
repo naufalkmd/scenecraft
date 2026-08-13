@@ -1,0 +1,1 @@
+../../../../forked-skills/ux-ui-agent-skills/frameworks/adapter-protocol.md

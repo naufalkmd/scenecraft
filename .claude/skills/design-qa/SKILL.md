@@ -1,0 +1,1 @@
+../../../forked-skills/ux-ui-agent-skills/.claude/skills/design-qa/SKILL.md

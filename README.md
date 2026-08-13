@@ -12,20 +12,21 @@ This repo is both the skill itself (`skill/`) and its own landing page (`src/`),
 - **The actual output** — the real source behind the mascot scene, with a "view full file" dialog showing the complete, unedited file.
 - **Quickstart** — three commands that actually work, copied from the real setup process.
 
-## Use the skill in your own project
+## Use the skills in your own project
 
 ```bash
-cp -R skill ~/.claude/skills/threejs-engineering
+git clone https://github.com/naufalkmd/scenecraft.git && cd scenecraft
+./scripts/install-skills.sh /path/to/your/frontend/project
 ```
 
-(or symlink it, or copy it into a project-scoped `.claude/skills/` instead of your personal one)
+Copies every skill this repo has wired for itself — 59 in total — as real files under `<target>/.claude/skills/`, not symlinks, so the target project owns its own copy. See [SKILLS.md](SKILLS.md) for the full list, what each one does, and why the remaining 5 were deliberately left out. Want just one skill instead of the full bundle? `cp -R .claude/skills/<name> /path/to/your/project/.claude/skills/<name>` works too (dereference with `cp -RL` if the source is still a symlink, and check `SKILLS.md`'s legend first — a handful of `ux-ui`-sourced skills are nested-symlink trees, not a single flat folder).
 
-It leans on two things from the wider [fal-ai-community/skills](https://github.com/fal-ai-community/skills) ecosystem:
+Some of the bundled skills lean on the wider [fal-ai-community/skills](https://github.com/fal-ai-community/skills) ecosystem:
 
-- **[genmedia](https://github.com/fal-ai-community/genmedia-cli)** — the CLI it calls for asset generation. Install with `curl https://genmedia.sh/install -fsS | bash`, then `genmedia setup`.
-- **[fal-models-catalog](https://github.com/fal-ai-community/skills/tree/main/skills/fal-models-catalog)** — curated endpoint picks it defers to instead of guessing a model ID. Grab it from that repo the same way if you want the full pattern-following behavior; the skill still works without it, just falls back to `genmedia models` search.
+- **[genmedia](https://github.com/fal-ai-community/genmedia-cli)** — the CLI that `threejs-engineering` and most of the fal-sourced skills (`fal-models-catalog`, `fal-recipes`, `fal-workflow`, `fal-prompting`, `fal-gamedev`, `fal-redesign`, `fal-regenerate-3d`, `character-design`, `cinematography`, `commercial`, `fan-cam`, `marketing`, `model-routing`, `storytelling`, `ugc`) call for asset generation. Install with `curl https://genmedia.sh/install -fsS | bash`, then `genmedia setup`.
+- You'll need a [fal.ai API key](https://fal.ai/dashboard/keys) set as `FAL_KEY`.
 
-You'll need a [fal.ai API key](https://fal.ai/dashboard/keys) set as `FAL_KEY`.
+`shadcn` and `migrate-radix-to-base` assume a shadcn-based project.
 
 ## Run this site locally
 
@@ -36,7 +37,7 @@ npm run dev
 
 ## Project structure
 
-See [SKILLS.md](SKILLS.md) for the full skill collection — 62 skills vendored from 4 forked repos, grouped by what they do rather than which fork they came from. 13 are actively wired into `.claude/skills/` (symlinked to the vendored copies, not duplicated) and used by Claude Code in this project.
+See [SKILLS.md](SKILLS.md) for the full skill collection — 62 skills vendored from 4 forked repos, grouped by what they do rather than which fork they came from. 59 are actively wired into `.claude/skills/` (symlinked to the vendored copies, not duplicated) and used by Claude Code in this project.
 
 ```
 skill/                the portable Claude Code skill — SKILL.md + references/ (this project's own)

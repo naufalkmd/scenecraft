@@ -1,0 +1,1 @@
+../../../forked-skills/web-animation-skills/skills/svg-animation/SKILL.md
