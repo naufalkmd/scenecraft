@@ -5,6 +5,8 @@ description: >
  of production endpoint defaults, text-to-image, image-to-image, text-to-video,
  image-to-video, and more. Use when the user has not named a specific model,
  or asks "which model for X", "best endpoint for Y", "what should I use for Z".
+ Inside a production skill (commercial, marketing, ugc, character-design,
+ cinematography, storytelling), use model-routing for its defaults instead.
 ---
 
 # fal.ai Models Catalog

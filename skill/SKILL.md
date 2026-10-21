@@ -2,19 +2,14 @@
 name: threejs-engineering
 description: >
   Write performance-aware React Three Fiber (Three.js + drei) components for
-  a real, existing web project: camera rigs, baked lighting, instancing,
-  LOD, compressed textures, and post-processing, plus how to source any
-  needed 3D model or texture through genmedia. Trigger for "three.js",
-  "react three fiber", "r3f", or requests to build, edit, or optimize a
-  Three.js scene. Specifically React Three Fiber, not 3D-on-the-web in
-  general — a generic "add a 3d object to my site" or "3d scene" request
-  needs the project's actual engine checked first: Babylon.js, PlayCanvas,
-  A-Frame, and plain Three.js without the R3F wrapper all need different
-  patterns than this skill teaches, and this skill says so rather than
-  forcing R3F patterns onto a different engine (see step 0). Complements
-  fal-regenerate-3d (a fixed character-selector recipe that ships its own
-  bundled page) by covering arbitrary scenes written directly into the
-  user's own codebase.
+  a real, existing web project: camera rigs, baked lighting, instancing, LOD,
+  compressed textures, post-processing, and sourcing 3D models or textures
+  through genmedia. Trigger for "three.js", "react three fiber", "r3f", or
+  building, editing, or optimizing a Three.js scene. R3F only: for a generic
+  "3d scene" request, check the project's engine first (step 0), since
+  Babylon.js, PlayCanvas, A-Frame, and plain Three.js need different
+  patterns. For the fixed rigged-character-selector recipe, use
+  fal-regenerate-3d instead.
 metadata:
   author: naufalkmd
   version: "0.1.0"
