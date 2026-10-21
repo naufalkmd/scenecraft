@@ -4,6 +4,8 @@ description: >
   Choose default fal.ai endpoint IDs for genmedia production skills. Use this
   with commercial, marketing, ugc, character-design, cinematography,
   storytelling, and workflow when the user has not named a specific model.
+  For a general "which model for X" question outside those skills, use
+  fal-models-catalog instead.
 ---
 
 # Genmedia model routing
@@ -162,7 +164,7 @@ social content.
 ## Utility endpoints
 
 Workflow utility endpoint IDs live in the `workflow` skill reference:
-`workflow/references/utility-endpoints.md`.
+`fal-workflow/references/utility-endpoints.md`.
 
 Utility endpoints are allowed to be explicit because they are deterministic
 tools, not creative model choices. Always inspect schema before use.

@@ -4,7 +4,7 @@ description: >
   Concrete implementation patterns for landing-page motion and visual
   effects that aren't Three.js/WebGL: scroll-triggered reveals, infinite
   logo marquees, glow/spotlight accents, gradient-fill text, and bento-grid
-  feature layouts. Trigger for "scroll animation", "logo marquee",
+  feature layouts. Trigger for "scroll reveal", "fade in on scroll", "logo marquee",
   "infinite scroll ticker", "glow effect", "spotlight effect", "gradient
   text", "bento grid", "feature grid layout", or when a design reference
   shows these effects and asks to reproduce them. For hover/press

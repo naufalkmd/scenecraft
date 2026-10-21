@@ -19,7 +19,7 @@ git clone https://github.com/naufalkmd/scenecraft.git && cd scenecraft
 ./scripts/install-skills.sh /path/to/your/frontend/project
 ```
 
-Copies every skill this repo has wired for itself — 47 in total, scoped deliberately to frontend work — as real files under `<target>/.claude/skills/`, not symlinks, so the target project owns its own copy. See [SKILLS.md](SKILLS.md) for the full list, what each one does, and why the remaining 4 were deliberately left out. Want just one skill instead of the full bundle? `cp -R .claude/skills/<name> /path/to/your/project/.claude/skills/<name>` works too (dereference with `cp -RL` if the source is still a symlink, and check `SKILLS.md`'s legend first — a handful of `ux-ui`-sourced skills are nested-symlink trees, not a single flat folder).
+Copies every skill this repo has wired for itself — 45 in total, scoped deliberately to frontend work — as real files under `<target>/.claude/skills/`, not symlinks, so the target project owns its own copy. See [SKILLS.md](SKILLS.md) for the full list, what each one does, and why the remaining 6 were deliberately left out. Want just one skill instead of the full bundle? `cp -R .claude/skills/<name> /path/to/your/project/.claude/skills/<name>` works too (dereference with `cp -RL` if the source is still a symlink, and check `SKILLS.md`'s legend first — a handful of `ux-ui`-sourced skills are nested-symlink trees, not a single flat folder).
 
 Some of the bundled skills lean on the wider [fal-ai-community/skills](https://github.com/fal-ai-community/skills) ecosystem:
 
@@ -27,6 +27,16 @@ Some of the bundled skills lean on the wider [fal-ai-community/skills](https://g
 - You'll need a [fal.ai API key](https://fal.ai/dashboard/keys) set as `FAL_KEY`.
 
 `shadcn` and `migrate-radix-to-base` assume a shadcn-based project.
+
+### Cloning on Windows
+
+Every skill under `.claude/skills/` is a git symlink. Windows git only creates real symlinks with Developer Mode on (Settings → System → For developers) and `core.symlinks` enabled; otherwise each one checks out as a one-line text file holding its target path. Claude Code then silently skips or misreads the skills, and `install-skills.sh` copies the stubs instead of the skills. Clone with:
+
+```bash
+git clone -c core.symlinks=true https://github.com/naufalkmd/scenecraft.git
+```
+
+Fixing an existing clone: turn on Developer Mode, run `git config core.symlinks true`, delete `.claude/` and `.agents/`, then `git checkout -- .claude .agents`.
 
 ## Run this site locally
 
@@ -37,7 +47,7 @@ npm run dev
 
 ## Project structure
 
-See [SKILLS.md](SKILLS.md) for the full skill collection — 49 skills vendored from 4 forked repos, grouped by what they do rather than which fork they came from. 47 are actively wired into `.claude/skills/` (symlinked to the vendored copies, not duplicated) and used by Claude Code in this project.
+See [SKILLS.md](SKILLS.md) for the full skill collection — 49 skills vendored from 4 forked repos plus 2 from the shadcn installer, grouped by what they do rather than which fork they came from. 45 are actively wired into `.claude/skills/` (symlinked to the vendored copies, not duplicated) and used by Claude Code in this project.
 
 ```
 skill/                the portable Claude Code skill — SKILL.md + references/ (this project's own)

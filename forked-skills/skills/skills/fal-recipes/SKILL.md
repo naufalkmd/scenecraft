@@ -12,7 +12,9 @@ description: >
  "photoreal", "realistic photo", "candid photo", "editorial portrait",
  "documentary photo", "looks like a real photograph", "iPhone-style photo",
  "film photo", "archival photo". Each recipe describes inputs, the genmedia
- call sequence, and quality checks.
+ call sequence, and quality checks. When a dedicated production skill
+ matches (character-design, commercial, cinematography, storytelling,
+ ugc), use that skill; this one is the recipe reference behind them.
 ---
 
 # fal.ai Recipes

@@ -1,6 +1,6 @@
 ---
 name: fal-regenerate-3d
-description: Build a fully-interactive 3D character-selector experience powered entirely by fal.ai. Generates stylized characters (FLUX.2 / GPT-Image-2), rigged animated GLBs (Meshy v6), themed companion creatures, per-character PATINA floor textures, looped Seedance video backgrounds, and a Three.js scene with palette swaps, breathing reflections, transition effects and a CREATE-YOUR-OWN flow.
+description: Build a fully-interactive 3D character-selector experience powered entirely by fal.ai. Generates stylized characters (FLUX.2 / GPT-Image-2), rigged animated GLBs (Meshy v6), themed companion creatures, per-character PATINA floor textures, looped Seedance video backgrounds, and a Three.js scene with palette swaps, breathing reflections, transition effects and a CREATE-YOUR-OWN flow. Only for that character-selector page; for any other 3D scene in an existing codebase, use threejs-engineering.
 ---
 
 # fal-regenerate-3d Skill
