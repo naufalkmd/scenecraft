@@ -4,7 +4,7 @@ Landing page + portable skill (`skill/`) for performance-aware React Three Fiber
 
 ## Skill routing
 
-47 skills are wired into `.claude/skills/` (see [SKILLS.md](SKILLS.md) for the full catalog and provenance). Several clusters overlap in purpose — use this to pick the right one instead of the first plausible match.
+45 skills are wired into `.claude/skills/` (see [SKILLS.md](SKILLS.md) for the full catalog and provenance). Several clusters overlap in purpose — use this to pick the right one instead of the first plausible match.
 
 **Wiring is all git symlinks.** On Windows the clone needs `core.symlinks=true` (and Developer Mode on, or git can't create them); otherwise every `.claude/skills/` entry checks out as a one-line text file holding a path, and the skills silently don't load. If a skill's description reads like `../../forked-skills/...`, that's what happened — see README.md.
 
@@ -58,10 +58,6 @@ These stack, they don't compete — a full pass is typically all four:
 `character-design`, `cinematography`, `commercial`, `fan-cam`, `marketing`, `model-routing`, `storytelling`, `ugc`, `fal-prompting`, `fal-gamedev`, `fal-redesign` all assume the `genmedia` CLI is installed and `FAL_KEY` is set — check that before reaching for one. `fal-models-catalog`, `fal-recipes`, and `fal-workflow` are the reference layer these (and `threejs-engineering`/`web-motion`) defer to for endpoint/recipe choice instead of guessing a model ID.
 - Endpoint choice: `model-routing` for the defaults inside a production skill (commercial, marketing, ugc, character-design, cinematography, storytelling); `fal-models-catalog` for a general "which model for X".
 - A request that names a production skill's subject ("character design", "commercial", "storyboard") goes to that skill, not `fal-recipes`.
-
-**Artifact/theme skills** (wired, but not for this site)
-- `theme-factory` and `web-artifacts-builder` style or build standalone claude.ai artifacts and decks. Never use them on this site's own pages — `theme-factory` would compete with the `--ink`/`--paper`/`--wire` system the same way `brandkit` would.
-
 **shadcn**
 - `shadcn` only when touching `src/components/ui/`. `migrate-radix-to-base` has no use here — this project never started on Radix — leave it untouched unless that changes.
 

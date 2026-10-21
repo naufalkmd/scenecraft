@@ -1,6 +1,6 @@
 # Skill collection
 
-Every skill from every repo this project forked from, vendored directly into `forked-skills/` — not external sibling clones anymore, so this repo is self-contained. Scoped deliberately to frontend work: general-purpose Anthropic office/dev skills with no frontend angle (`docx`, `pdf`, `pptx`, `xlsx`, `claude-api`, `mcp-builder`, `internal-comms`, `slack-gif-creator`, `doc-coauthoring`, `skill-creator`, `algorithmic-art`, `canvas-design`, `brand-guidelines`) were removed entirely rather than left unwired, so this stays a niche frontend collection instead of a general skill dump. 51 skills total — 49 vendored across 4 forks, plus `shadcn` and `migrate-radix-to-base` from the shadcn installer (in `.agents/skills/`); 47 are actively wired into `.claude/skills/` (symlinked to the vendored copies below, not duplicated — see the note on `ux-ui-agent-skills` in the legend) and get used by Claude Code in this project. The remaining 4 are vendored for completeness but deliberately not wired, one per row below.
+Every skill from every repo this project forked from, vendored directly into `forked-skills/` — not external sibling clones anymore, so this repo is self-contained. Scoped deliberately to frontend work: general-purpose Anthropic office/dev skills with no frontend angle (`docx`, `pdf`, `pptx`, `xlsx`, `claude-api`, `mcp-builder`, `internal-comms`, `slack-gif-creator`, `doc-coauthoring`, `skill-creator`, `algorithmic-art`, `canvas-design`, `brand-guidelines`) were removed entirely rather than left unwired, so this stays a niche frontend collection instead of a general skill dump. 51 skills total — 49 vendored across 4 forks, plus `shadcn` and `migrate-radix-to-base` from the shadcn installer (in `.agents/skills/`); 45 are actively wired into `.claude/skills/` (symlinked to the vendored copies below, not duplicated — see the note on `ux-ui-agent-skills` in the legend) and get used by Claude Code in this project. The remaining 6 are vendored for completeness but deliberately not wired, one per row below.
 
 Grouped below by what each skill actually does, not by which repo it came from — the **Source** column carries the provenance instead.
 
@@ -75,16 +75,16 @@ Each fork is vendored down to what's actually load-bearing: skill folders plus w
 | **prototype** | ✅ | ux-ui | Nested symlinks (`workflows/`, plus the full `accessibility/`, `components/`, `taste/` its high-fi steps pull from). |
 | **redesign** | ✅ | ux-ui | Nested symlinks (`scripts/`, `taste/`, `workflows/`). |
 | **ux-writing** | ✅ | ux-ui | Nested symlinks (`accessibility/`, `content/`). |
-| **theme-factory** | ✅ | anthropic | Styles artifacts (slides, docs, HTML landing pages) with a theme. |
-| **web-artifacts-builder** | ✅ | anthropic | Multi-component React/Tailwind/shadcn claude.ai artifacts. |
 | **webapp-testing** | ✅ | anthropic | Playwright toolkit for testing local web apps. |
 | **shadcn** | ✅ | installer | Lives in `.agents/skills/`. |
 | **migrate-radix-to-base** | ✅ | installer | Bundled with the shadcn install; unused so far. |
 | **brandkit** | | ux-ui | Would compete with this site's own hand-built `--ink`/`--paper`/`--wire` token system. |
 | **design-tokens** | | ux-ui | Would compete with this site's own token system, same as `brandkit`. |
 | **token-build** | | ux-ui | Would compete with this site's own token system, same as `brandkit`. |
+| **theme-factory** | | anthropic | Themes standalone artifacts (slides, docs, HTML pages) — on this site it would compete with the own token system, same as `brandkit`, and its "HTML landing pages" trigger made it a live routing risk. |
+| **web-artifacts-builder** | | anthropic | Builds bundled claude.ai artifacts (`bundle.html`); no use in a Vite project. |
 
-Left unwired deliberately: `design-tokens`/`token-build`/`brandkit` would compete with this site's own token system rather than complement it. Everything else in the `ux-ui` fork is wired. The `anthropic` fork is pared down to just these 4 frontend-relevant skills — the rest of that fork (general office/dev skills, `brand-guidelines`) was removed entirely, see the intro note above.
+Left unwired deliberately: `design-tokens`/`token-build`/`brandkit`/`theme-factory` would compete with this site's own token system rather than complement it, and `web-artifacts-builder` targets claude.ai artifacts, not this codebase. Everything else in the `ux-ui` fork is wired. The `anthropic` fork is pared down to just these 4 frontend-relevant skills (2 wired) — the rest of that fork (general office/dev skills, `brand-guidelines`) was removed entirely, see the intro note above.
 
 ## Retired
 

@@ -42,8 +42,6 @@ for why each was chosen over its alternatives.
 | storytelling | fal-ai-community/skills |
 | ugc | fal-ai-community/skills |
 | frontend-design | anthropics/skills |
-| theme-factory | anthropics/skills |
-| web-artifacts-builder | anthropics/skills |
 | webapp-testing | anthropics/skills |
 | accessible-animation | iart-ai/web-animation-skills |
 | micro-interaction | iart-ai/web-animation-skills |
